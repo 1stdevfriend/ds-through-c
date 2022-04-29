@@ -63,3 +63,9 @@ void sort(int *arr, int size){
   }
 }
 
+// Displays the content of array
+void display(int *arr, int size){
+  for (int i = 0; i < size; i++)
+      printf("%d\t", arr[i]);
+  printf("\n");
+}
