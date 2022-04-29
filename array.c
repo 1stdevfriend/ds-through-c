@@ -47,6 +47,14 @@ int main(){
 void insert(int *arr, int pos, int num){
   int i;
   for (i = MAX - 1; i >= pos; i--)
-    arr[i] = arr[i-1]; // Shifting values to right
+    arr[i] = arr[i-1]; // Shifting values to left
   arr[i] = num;
+}
+
+// Deletes an element from the given position pos
+void del(int *arr, int pos){
+  int i;
+  for (i = pos; i < MAX; i++) 
+    arr[i - 1] = arr[i]; // Shifting values to right
+  arr[i] = 0;
 }
