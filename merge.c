@@ -4,6 +4,7 @@
 // Time: 05:05 AM
 
 #include<stdio.h>
+#include<stdlib.h>
 
 #define MAX1 5
 #define MAX2 7
@@ -37,3 +38,14 @@ int main(){
   return 0;
 }
 
+// Create array of given size
+int* create(int size){
+  int *arr;
+  arr = (int *) malloc(sizeof(int) * size);
+  for (int i = 0; i < size; i++){
+    printf("Enter element no. %d", i + 1);
+    scanf("%d", &arr[i]);
+  }
+  printf("\n");
+  return arr;
+}
