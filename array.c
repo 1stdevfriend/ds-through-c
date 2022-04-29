@@ -80,3 +80,10 @@ void search(int *arr, int num){
   if (i == MAX)
     printf("The elements %d is not present in the array\n\n", num);
 }
+
+// Display the contents of a array
+void display(int *arr){
+  for(int i = 0; i < MAX; i++) // Traversing
+    printf("%d\t", arr[i]);
+  printf("\n");
+}
