@@ -49,3 +49,17 @@ int* create(int size){
   printf("\n");
   return arr;
 }
+
+// Sorts array in ascending order
+void sort(int *arr, int size){
+  for (int i = 0; i < size; i++){
+    for (int j = i + 1; j < size; j++){
+      if (arr[i] > arr[j]){ // Bubble sorting
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+}
+
