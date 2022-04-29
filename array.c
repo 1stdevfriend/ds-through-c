@@ -58,3 +58,12 @@ void del(int *arr, int pos){
     arr[i - 1] = arr[i]; // Shifting values to right
   arr[i] = 0;
 }
+
+// Reverses the entire array
+void reverse(int *arr){
+  for (int i = 0; i < MAX/2; i++){
+    int temp = arr[i];
+    arr[i] = arr[MAX - 1 - i];
+    arr[MAX - 1 - i] = temp;
+  }
+}
