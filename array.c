@@ -67,3 +67,16 @@ void reverse(int *arr){
     arr[MAX - 1 - i] = temp;
   }
 }
+
+// Searches array for a given elements num
+void search(int *arr, int num){
+  int i; 
+  for (i = 0; i < MAX; i++){
+    if (arr[i] == num){
+      printf("The elements %d is present at %dth position. \n\n", num, i+1);
+      return ;
+    }
+  }
+  if (i == MAX)
+    printf("The elements %d is not present in the array\n\n", num);
+}
