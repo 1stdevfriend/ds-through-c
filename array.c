@@ -47,7 +47,7 @@ int main(){
 void insert(int *arr, int pos, int num){
   int i;
   for (i = MAX - 1; i >= pos; i--)
-    arr[i] = arr[i-1]; // Shifting values to left
+    arr[i] = arr[i-1]; // Shifting values to right
   arr[i] = num;
 }
 
@@ -55,8 +55,8 @@ void insert(int *arr, int pos, int num){
 void del(int *arr, int pos){
   int i;
   for (i = pos; i < MAX; i++) 
-    arr[i - 1] = arr[i]; // Shifting values to right
-  arr[i] = 0;
+    arr[i - 1] = arr[i]; // Shifting values to left
+  arr[i] = 0;  // FIXME: Check why it isn't giving 0
 }
 
 // Reverses the entire array
@@ -73,12 +73,12 @@ void search(int *arr, int num){
   int i; 
   for (i = 0; i < MAX; i++){
     if (arr[i] == num){
-      printf("The elements %d is present at %dth position. \n\n", num, i+1);
+      printf("The elements %d is present at %dth position.\n", num, i+1);
       return ;
     }
   }
   if (i == MAX)
-    printf("The elements %d is not present in the array\n\n", num);
+    printf("The elements %d is not present in the array.\n", num);
 }
 
 // Display the contents of a array
