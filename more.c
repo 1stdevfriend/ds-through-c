@@ -73,3 +73,22 @@ void display(int mat[3][3]){
   }
   printf("\n");
 }
+
+// Multiples two matrices
+void matmul(int mat1[3][3], int mat2[3][3], int mat3[3][3]){
+  for (int i = 0; i < MAX; i++){
+    for (int j = 0; j < MAX; j++){
+      mat1[i][j] = 0;
+      for (int k = 0; k < MAX; k++)
+        mat1[i][j] += mat2[i][k] * mat2[k][j];
+    }
+  }
+}
+
+// Obtains traspose of matrix m1
+void traspose(int mat1[3][3], int mat2[3][3]){
+  for (int i = 0; i < MAX; i++){
+    for (int j = 0; j < MAX; j++)
+      mat2[i][j] = mat1[j][i];
+  }
+}
