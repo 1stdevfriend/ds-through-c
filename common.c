@@ -53,7 +53,6 @@ void create(int mat[3][3]){
   printf("\n");
 }
 
-
 // Displays the content of the matrix
 void display(int mat[3][3]){
   for (int i = 0; i < MAX; i++){
@@ -62,3 +61,12 @@ void display(int mat[3][3]){
   }
   printf("\n");
 }
+
+// Adds two matrics m1 and m2
+void matadd(int m1[3][3],int m2[3][3], int m3[3][3]){
+  for (int i = 0; i < MAX; i++){
+    for (int j = 0; j < MAX; j++)
+      m3[i][j] = m1[i][j] + m2[i][j];
+  }
+}
+
