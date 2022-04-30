@@ -42,3 +42,11 @@ int main(){
 
   return 0;
 }
+
+// Initialize matrix with 0s
+void matrix(int mat[3][3]){
+  for (int i = 0 ; i < MAX; i++){
+    for (int j = 0; j < MAX; j++)
+      mat[i][j] = 0;
+  }
+}
