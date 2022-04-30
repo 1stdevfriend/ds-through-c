@@ -70,3 +70,13 @@ void matadd(int m1[3][3],int m2[3][3], int m3[3][3]){
   }
 }
 
+// Multiplies two matrics m1 and m2
+void matmul(int m1[3][3], int m2[3][3], int m3[3][3]){
+  for (int i = 0; i < MAX; i++){
+    for (int j = 0; j < MAX; j++){
+      m3[i][j] = 0;
+      for (int k = 0; k < MAX; k++)
+        m3[i][j] += m1[i][k] * m2[k][j];
+    }
+  }
+}
