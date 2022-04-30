@@ -80,3 +80,12 @@ void matmul(int m1[3][3], int m2[3][3], int m3[3][3]){
     }
   }
 }
+
+// Obtains transpose of a matrix m1
+void transpose(int m1[3][3], int m2[3][3]){
+  for (int i = 0; i < MAX; i++){
+    for (int j = 0; j < MAX; j++)
+      m2[i][j] = m1[j][i];
+  }
+}
+
