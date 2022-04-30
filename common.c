@@ -1,6 +1,6 @@
 // Common matrix operations
 // Author: Xhunter
-// Time: 05:05 AM
+// Time: 02:39 PM
 // Date: 30 Apr 2022
 
 #include<stdio.h>
@@ -88,4 +88,3 @@ void transpose(int m1[3][3], int m2[3][3]){
       m2[i][j] = m1[j][i];
   }
 }
-

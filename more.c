@@ -50,3 +50,16 @@ void matrix(int mat[3][3]){
       mat[i][j] = 0;
   }
 }
+
+// Creates matrix
+void create(int mat[3][3]){
+  int num;
+  for (int i = 0; i < MAX; i++){
+    for (int j = 0; j < MAX; j++){
+      printf("Enter the element: ");
+      scanf("%d", &num);
+      mat[i][j] = num;
+    }
+  }
+  printf("\n");
+}
