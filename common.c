@@ -52,3 +52,13 @@ void create(int mat[3][3]){
   }
   printf("\n");
 }
+
+
+// Displays the content of the matrix
+void display(int mat[3][3]){
+  for (int i = 0; i < MAX; i++){
+    for (int j = 0; j < MAX; j++)
+      printf("%d\t", mat[i][j]);
+  }
+  printf("\n");
+}
