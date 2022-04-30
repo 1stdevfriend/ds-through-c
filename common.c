@@ -41,3 +41,14 @@ int main(){
 
   return 0;
 }
+
+// Create matrix
+void create(int mat[3][3]){
+  for (int i = 0; i < MAX; i++){
+    for (int j = 0; j < MAX; j++){
+      printf("Enter the element: ");
+      scanf("%d", &mat[i][j]);
+    }
+  }
+  printf("\n");
+}
