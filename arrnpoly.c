@@ -85,3 +85,38 @@ void display(struct poly p){
       printf("\b\b");
     printf("\n\n");
 }
+
+// Adds two polynomials into one
+struct poly polyadd(struct poly p1, struct poly p2){
+  struct poly p3;
+  initpoly(&p3);
+
+  int c = 0;
+  if(p1.noofterms > p2.noofterms)
+    c = p1.noofterms;
+  else
+    c = p2.noofterms;
+
+  for (int i = 0, j = 0; i <= c; p3.noofterms++){
+    if (p1.t[i].coeff == 0 && p2.t[j].coeff == 0)
+      break;
+    if (p1.t[i].exp >= p2.t[i].exp){
+      if (p1.t[i].exp == p2.t[j].exp){
+        p3.t[p3.noofterms].coeff = p1.t[i].coeff + p2.t[j].coeff;
+        p3.t[p3.noofterms].exp = p1.t[i].exp;
+        i++; j++;
+      }
+      else{
+        p3.t[p3.noofterms].coeff = p1.t[i].coeff;
+        p3.t[p3.noofterms].exp = p1.t[i].exp;
+        i++;
+      }
+    }
+    else{
+        p3.t[p3.noofterms].coeff = p2.t[i].coeff;
+        p3.t[p3.noofterms].exp = p2.t[i].exp;
+        j++;
+    }
+  }
+  return p3;
+}
