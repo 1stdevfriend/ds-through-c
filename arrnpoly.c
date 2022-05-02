@@ -4,6 +4,7 @@
 // Time: 06:28 PM
 
 #include<stdio.h>
+#define MAX 10
 
 struct term{
   int coeff;
@@ -51,4 +52,13 @@ int main(){
   display(p3);
 
   return 0;
+}
+
+// Initializes elements of struct poly
+void initpoly(struct poly *p){
+  p -> noofterms = 0;
+  for (int i = 0; i < MAX; i++){
+    p -> t[i].coeff = 0;
+    p -> t[i].exp = 0;
+  }
 }
