@@ -62,3 +62,10 @@ void initpoly(struct poly *p){
     p -> t[i].exp = 0;
   }
 }
+
+// Adds polynomial term to the array
+void polyappend(struct poly *p, int c, int e){
+  p -> t[p -> noofterms].coeff = c;
+  p -> t[p -> noofterms].exp = e;
+  ( p -> noofterms )++;
+}
