@@ -27,7 +27,7 @@ int main(){
   display(mat);
 
   d = determinant(mat);
-  printf("The determinant for given matrix: %d\n\n", d);
+  printf("The determinant for given matrix: %.0f\n\n", d);
 
   if (d == 0)
     printf("Matrix is singular.\n\n");
@@ -78,18 +78,19 @@ void display(int mat[3][3]){
 void matmul(int mat1[3][3], int mat2[3][3], int mat3[3][3]){
   for (int i = 0; i < MAX; i++){
     for (int j = 0; j < MAX; j++){
-      mat1[i][j] = 0;
+      mat3[i][j] = 0;
       for (int k = 0; k < MAX; k++)
-        mat1[i][j] += mat2[i][k] * mat2[k][j];
+        mat3[i][j] += mat1[i][k] * mat2[k][j];
     }
   }
 }
 
 // Obtains traspose of matrix m1
-void traspose(int mat1[3][3], int mat2[3][3]){
+void transpose(int mat1[3][3], int mat2[3][3]){
   for (int i = 0; i < MAX; i++){
-    for (int j = 0; j < MAX; j++)
+    for (int j = 0; j < MAX; j++){
       mat2[i][j] = mat1[j][i];
+    }
   }
 }
 
@@ -118,12 +119,14 @@ int isortho(int mat[3][3]){
 
   int i = 0;
   for (i = 0; i < MAX; i++){
-    if(m2[i][i] != 1)
+    if(m2[i][i] == 1)
+      continue;
+    else
       break;
   }
   
   if (i == MAX)  // Flag return values
-    return 1;
+    return 1; 
   else
     return 0;
 }
