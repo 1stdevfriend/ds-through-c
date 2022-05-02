@@ -108,3 +108,22 @@ double determinant(int mat[3][3]){
   }
   return sum;
 }
+
+// Checks orthogonal matrix
+int isortho(int mat[3][3]){
+  int m1[3][3], m2[3][3];
+
+  transpose(mat, m1);
+  matmul(mat, m1, m2);
+
+  int i = 0;
+  for (i = 0; i < MAX; i++){
+    if(m2[i][i] != 1)
+      break;
+  }
+  
+  if (i == MAX)  // Flag return values
+    return 1;
+  else
+    return 0;
+}
