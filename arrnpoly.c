@@ -69,3 +69,19 @@ void polyappend(struct poly *p, int c, int e){
   p -> t[p -> noofterms].exp = e;
   ( p -> noofterms )++;
 }
+
+// Displays the polynomial equation
+void display(struct poly p){
+  int flag = 0;
+  for (int i = 0; i < p.noofterms; i++){
+    if (p.t[i].exp != 0)
+      printf("%dx^%d + ", p.t[i].coeff, p.t[i].exp);
+    else{
+      printf("%d", p.t[i].coeff);
+      flag = 1;
+    }
+  }
+    if(!flag)
+      printf("\b\b");
+    printf("\n\n");
+}
