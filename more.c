@@ -92,3 +92,19 @@ void traspose(int mat1[3][3], int mat2[3][3]){
       mat2[i][j] = mat1[j][i];
   }
 }
+
+// Finds the determinant value for given matrix
+double determinant(int mat[3][3]){
+  int j=1, k=MAX-1;
+  double sum, p;
+  sum = 0.0; 
+
+  for (int i = 0; i < MAX; i++){
+    p = pow(-1.0, i);
+    if (i == MAX-1)
+      k = 1;
+    sum += (mat[0][i] * (mat[1][j] * mat[2][k] - mat[2][j] * mat[1][k])) * p;
+    j = 0;
+  }
+  return sum;
+}
