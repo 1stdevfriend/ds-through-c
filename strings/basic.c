@@ -37,3 +37,13 @@ int main(){
 
   return 0;
 }
+
+// Finds the length of the string
+int xstrlen(char *s){
+  int l = 0;
+  while(*s){
+    l++;
+    s++;
+  }
+  return l;
+}
