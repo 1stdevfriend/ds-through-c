@@ -47,3 +47,13 @@ int xstrlen(char *s){
   }
   return l;
 }
+
+// Copies source string s to the targer string t
+void xstrcpy(char *t, char *s){
+  while(*s){
+    *t = *s;
+    t++;
+    s++;
+  }
+  *t = '\0';
+}
