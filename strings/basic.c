@@ -57,3 +57,12 @@ void xstrcpy(char *t, char *s){
   }
   *t = '\0';
 }
+
+// Concatenate two stings
+void xstrcat(char *t, char *s){
+  while(*t)
+    t++;
+  while(*s)
+    *t = *s;
+  *t = '\0';
+}
