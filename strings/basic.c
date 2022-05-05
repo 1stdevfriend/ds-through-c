@@ -66,3 +66,13 @@ void xstrcat(char *t, char *s){
     *t = *s;
   *t = '\0';
 }
+
+// Compares two strings s & t for equality
+int xstrcmp(char *s, char *t){
+  while(*s == *t){
+    if (!(*s))
+      return 0;
+    s++; t++;
+  }
+  return (*s - *t);
+}
