@@ -26,7 +26,6 @@ int main(){
 
   initpoly(&p1);
   initpoly(&p2);
-  initpoly(&p3);
 
   polyappend(&p1, 1, 7);
   polyappend(&p1, 2, 6);
@@ -48,7 +47,7 @@ int main(){
   printf("Second polynomial:");
   display(p2);
 
-  printf("Third polynomial:");
+  printf("Resultant polynomial:");
   display(p3);
 
   return 0;
@@ -82,7 +81,7 @@ void display(struct poly p){
     }
   }
     if(!flag)
-      printf("\b\b");
+      printf("\b\b ");
     printf("\n\n");
 }
 
@@ -98,9 +97,14 @@ struct poly polyadd(struct poly p1, struct poly p2){
     c = p2.noofterms;
 
   for (int i = 0, j = 0; i <= c; p3.noofterms++){
-    if (p1.t[i].coeff == 0 && p2.t[j].coeff == 0)
+    printf("I:%d\n", i);
+    if (p1.t[i].coeff == 0 && p2.t[j].coeff == 0){
+      printf("Broken I:%d\n", i);
       break;
-    if (p1.t[i].exp >= p2.t[i].exp){
+    }
+    printf("P1 Exp-%d\n", p1.t[i].exp);
+    printf("P2 Exp-%d\n", p2.t[j].exp);
+    if (p1.t[i].exp >= p2.t[j].exp){
       if (p1.t[i].exp == p2.t[j].exp){
         p3.t[p3.noofterms].coeff = p1.t[i].coeff + p2.t[j].coeff;
         p3.t[p3.noofterms].exp = p1.t[i].exp;
@@ -113,8 +117,8 @@ struct poly polyadd(struct poly p1, struct poly p2){
       }
     }
     else{
-        p3.t[p3.noofterms].coeff = p2.t[i].coeff;
-        p3.t[p3.noofterms].exp = p2.t[i].exp;
+        p3.t[p3.noofterms].coeff = p2.t[j].coeff;
+        p3.t[p3.noofterms].exp = p2.t[j].exp;
         j++;
     }
   }
