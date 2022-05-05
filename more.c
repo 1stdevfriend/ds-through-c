@@ -1,7 +1,7 @@
 // More matrix operations
 // Author: Xhunter
-// Time: 03:39 PM
 // Date: 30 Apr 2022
+// Time: 03:39 PM
 
 #include<stdio.h>
 #include<math.h>
