@@ -4,6 +4,8 @@
 // Time: 06:27 PM
 
 #include<stdio.h>
+#include<string.h>
+
 
 #define MAX1 6
 #define MAX2 20
@@ -51,5 +53,17 @@ int main(){
   else
     printf("Sorry you're a trespasser\n");
 
+  return 0;
+}
+
+// Adds string to the array
+int add(char *s){
+  if (count < MAX1){
+    if (strlen(s) < MAX2){
+      strcpy(&masterlist[count][0], s);
+      count++; return 1;
+    }
+  }
+  
   return 0;
 }
