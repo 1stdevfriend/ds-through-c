@@ -67,3 +67,14 @@ int add(char *s){
   
   return 0;
 }
+
+// Finds given string
+int find(char *s){
+  int flag = 0;
+  for (int i = 0; i < count; i++){
+    if (strcmp(&masterlist[i][0], s) == 0){
+      flag = 1; break;
+    }
+  }
+  return flag;
+}
