@@ -6,16 +6,18 @@
 #include<stdio.h>
 #include<string.h>
 
-#define MAX 6
 
-char *names[MAX];
+#define MAX1 6
+#define MAX2 20
+
+char masterlist[MAX1][MAX2];
 int count;
 
 int add(char *s);
-void swap(int, int);
-void show();
+int find(char *s);
 
 int main(){
+  char yourname[MAX2];
   int flag;
 
   flag = add("akshay");
@@ -42,23 +44,37 @@ int main(){
   if (flag == 0)
     printf("Unable to add string\n");
 
-  printf("Names before swapping:");
-  show();
+  printf("Enter your name:");
+  gets(yourname);
+  flag = find(yourname);
 
-  swap(2, 3);
-  printf("Names after swapping:");
-  show();
+  if (flag == 1)
+    printf("Welcome, you can enter the palace\n");
+  else
+    printf("Sorry you're a trespasser\n");
 
   return 0;
 }
 
 // Adds string to the array
 int add(char *s){
-  if (count < MAX){
-    names[count] = s;
-    count++;
-    return 1;
+  if (count < MAX1){
+    if (strlen(s) < MAX2){
+      strcpy(&masterlist[count][0], s);
+      count++; return 1;
     }
+  }
   
   return 0;
+}
+
+// Finds given string
+int find(char *s){
+  int flag = 0;
+  for (int i = 0; i < count; i++){
+    if (strcmp(&masterlist[i][0], s) == 0){
+      flag = 1; break;
+    }
+  }
+  return flag;
 }
