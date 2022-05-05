@@ -4,7 +4,6 @@
 // Time: 05.15 PM
 
 #include<stdio.h>
-#include<string.h>
 
 int xstrlen(char *);
 void xstrcpy(char *, char *);
@@ -63,7 +62,7 @@ void xstrcat(char *t, char *s){
   while(*t)
     t++;
   while(*s)
-    *t = *s;
+    *t++ = *s++;
   *t = '\0';
 }
 
