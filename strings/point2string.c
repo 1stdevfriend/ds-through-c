@@ -42,11 +42,11 @@ int main(){
   if (flag == 0)
     printf("Unable to add string\n");
 
-  printf("Names before swapping:");
+  printf("Names before swapping:\n");
   show();
 
   swap(2, 3);
-  printf("Names after swapping:");
+  printf("Names after swapping:\n");
   show();
 
   return 0;
@@ -68,4 +68,11 @@ void swap(int i, int j){
   char *temp = names[i];
   names[i] = names[j];
   names[j] = temp;
+}
+
+// Displays the elements of array
+void show(){
+  for (int i = 0; i < count; i++)
+    puts(names[i]);
+  printf("\n");
 }
