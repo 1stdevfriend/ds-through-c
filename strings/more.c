@@ -215,3 +215,15 @@ void lower(char *s){
     s++;
   }
 }
+
+// Reverses a string
+void reverse(char *s){
+  int l = strlen(s);
+  char ch, *t = (s + l - 1);
+
+  int i = 0;
+  while(i < l/2){
+    ch = *s; *s = *t; *t = ch; // Swap
+    s++; t--; i++;
+    }
+}
