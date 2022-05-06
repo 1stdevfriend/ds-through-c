@@ -206,3 +206,12 @@ void upper(char *s){
     s++;
   }
 }
+
+// Converts string to lowercase
+void lower(char *s){
+  while(*s){
+    if (*s >= 65 && *s <=91)
+      *s += 32;
+    s++;
+  }
+}
