@@ -13,7 +13,7 @@ int issmaller(char *, char *);
 int isgreater(char *, char *);
 char* getsub(char *, int, int);
 char* leftsub(char *, int);
-char* rightsub(char *, int, int);
+char* rightsub(char *, int);
 void upper(char *);
 void lower(char *);
 void reverse(char *);
@@ -171,6 +171,21 @@ char* getsub(char *str, int spos, int n){
 // Extracts the leftmost n characters from the string
 char* leftsub(char *s, int n){
   char *t = (char *) malloc (n + 1);
+
+  int i = 0;
+  while(i < n){
+    t[i] = *s;
+    s++; i++;
+  }
+  t[i] = '\0';
+
+  return t;
+}
+
+char* rightsub(char *str, int n){
+  char *t = (char *) malloc (n + 1);
+  int l = strlen(str);
+  char *s = str + (l - n);
 
   int i = 0;
   while(i < n){
