@@ -240,3 +240,14 @@ int replace(char *str, char oldch, char newch){
 
   return -1;
 }
+
+// Sets a char at a given position
+int setat(char *str, char ch, int i){
+  int len = strlen(str);
+
+  if (i < 0 || len < i)
+    return 0;
+
+  *(str + i) = ch;
+  return 1;
+}
