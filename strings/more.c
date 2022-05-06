@@ -102,3 +102,14 @@ int main(){
 
   return 0;
 }
+
+// Checks the first occurrence of a character
+int search(char *str, char ch){
+  int i = 0;
+  while(*str){
+    if (*str == ch)
+      return i;
+    str++; i++;
+  }
+  return -1;
+}
