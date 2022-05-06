@@ -152,3 +152,18 @@ int isgreater(char *s, char *t){
   }
   return 1;
 }
+
+// Extracts the character at given position
+char* getsub(char *str, int spos, int n){
+  char *s = str + spos;
+  char *t = (char *) malloc (n + 1);
+
+  int i = 0;
+  while(i < n){
+    t[i] = *s;
+    s++; i++;
+  }
+  t[i] = '\0';
+
+  return t;
+}
