@@ -123,3 +123,18 @@ int isequal(char *s, char *t){
   }
   return 1;
 }
+
+// Checks whether first string is less than second
+int issmaller(char *s, char *t){
+  while(*t){
+    if (*s != *t){ 
+      if (*s < *t)
+        return 1;
+      else
+        return 0;
+    }
+    s++; t++;
+  }
+  return 1;
+}
+
