@@ -20,7 +20,33 @@ int main(){
 
   // Search if s2 is present in s1
   pos = xstrsearch(s1, s2);
-  printf("The pattern string is found at position %d\n", pos);
+  if (pos == -1)
+    printf("The pattern string is not found");
+  else
+    printf("The pattern string is found at position %d\n", pos);
 
   return 0;
+}
+
+// Searches for the given pattern s2 into the string s1
+int xstrsearch(char* s1, char* s2){
+  int i, j, k;
+
+  int l1 = strlen(s1);
+  int l2 = strlen(s2);
+  printf("%d\t", l1);
+  printf("%d\t", l2);
+
+  for (i = 0; i <= l1 - l2; i++){
+    j = 0;
+    k = i;
+    while((s1[k] == s2[j]) && (j < l2)){
+      printf("%c\t", s1[k]);
+      printf("%c\t", s2[j]);
+      k++; j++;
+    }
+    if (j == l2)
+      return i;
+  }
+  return -1;
 }
