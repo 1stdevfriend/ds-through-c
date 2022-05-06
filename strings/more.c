@@ -36,30 +36,30 @@ int main(){
   if (i != -1)
     printf("The first occurence of character %c is found at index %d\n", ch, i);
   else
-    printf("Character %c is not found in the list", ch);
+    printf("Character %c is not found in the list\n", ch);
 
   printf("String s2: %s\n", s2);
 
   // Compares two string s1 and s2
   i = isequals(s1, s2);
   if (i == 1)
-    printf("Strings s1 and s2 are identical");
+    printf("Strings s1 and s2 are identical\n");
   else
-    printf("Strings s1 and s2 are not identical");
+    printf("Strings s1 and s2 are not identical\n");
 
   // Checks smaller
   i = issmaller(s1, s2);
   if (i == 1)
-    printf("Strings s1 is smaller than s2");
+    printf("Strings s1 is smaller than s2\n");
   else
-    printf("Strings s1 is not smaller than s2");
+    printf("Strings s1 is not smaller than s2\n");
 
   // Checks greater
   i = isgreater(s1, s2);
   if (i == 1)
-    printf("Strings s1 is greater than s2");
+    printf("Strings s1 is greater than s2\n");
   else
-    printf("Strings s1 is not greater than s2");
+    printf("Strings s1 is not greater than s2\n");
 
   // Extract chars at given position
   printf("String s3: %s\n", s3);
@@ -73,7 +73,7 @@ int main(){
   free(s);
 
   // Extract rightmost n characters
-  s = leftsub(s3, 4);
+  s = rightsub(s3, 4);
   printf("Right sub string: %s\n", s);
   free(s);
 
@@ -115,7 +115,7 @@ int search(char *str, char ch){
 }
 
 // Checks whether two strings are equal
-int isequal(char *s, char *t){
+int isequals(char *s, char *t){
   while(*s || *t){
     if (*s != *t)
       return 0;
