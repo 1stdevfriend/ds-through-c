@@ -196,3 +196,13 @@ char* rightsub(char *str, int n){
 
   return t;
 }
+
+
+// Converts string to uppercase
+void upper(char *s){
+  while(*s){
+    if (*s >= 97 && *s <=123)
+      *s -= 32;
+    s++;
+  }
+}
