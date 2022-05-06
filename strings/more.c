@@ -227,3 +227,16 @@ void reverse(char *s){
     s++; t--; i++;
     }
 }
+
+// Replaces the first occurence of char with new char
+int replace(char *str, char oldch, char newch){
+  while(*str){
+    if (*str == oldch){
+      *str = newch;
+      return 1;
+    }
+    str++;
+  }
+
+  return -1;
+}
