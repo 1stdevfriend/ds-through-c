@@ -113,3 +113,13 @@ int search(char *str, char ch){
   }
   return -1;
 }
+
+// Checks whether two strings are equal
+int isequal(char *s, char *t){
+  while(*s || *t){
+    if (*s != *t)
+      return 0;
+    s++; t++;
+  }
+  return 1;
+}
